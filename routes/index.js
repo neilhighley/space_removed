@@ -20,8 +20,14 @@ router.get('/ranges', function(req, res) {
   res.json(q);//rem
 });
 
+router.post('/sensor/:id',function(req,res){
+  res.json({response:'sensor-success'});
+})
+router.post('/img',function(req,res){
+  res.json({response:'img-success'});
+})
 router.get('/range',function(req,res){
-    res.json({response:'success'});
+  res.json({response:'success'});
 })
 
 module.exports = router;
