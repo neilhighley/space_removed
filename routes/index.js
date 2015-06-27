@@ -17,7 +17,7 @@ router.get('/ranges', function(req, res) {
     {position:8,active:false},
     {position:9,active:false}]};
 
-  res.json(q);
+  res.json(q);//rem
 });
 
 router.get('/range',function(req,res){
