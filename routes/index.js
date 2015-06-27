@@ -20,5 +20,8 @@ router.get('/ranges', function(req, res) {
   res.json(q);
 });
 
+router.get('/range',function(req,res){
+    res.json({response:'success'});
+})
 
 module.exports = router;
