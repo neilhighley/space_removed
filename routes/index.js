@@ -35,7 +35,7 @@ router.get('/pepper',function(req,res){
 })
 router.get('/pepperp',function(req,res){
   var html_return="<html><head></head><body><style>body{background-color:#000;}</style><img src='/pepper' style='height:100%'/></body>";
-  res.sendfile(filepath);
+  res.sendfile(html_return);
 })
 
 module.exports = router;
