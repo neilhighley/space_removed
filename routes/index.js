@@ -138,9 +138,12 @@ router.post('/img',function(req,res){
   req.pipe(req.busboy);
   req.busboy.on('file', function (fieldname, file, filename) {
 
-    fstream = fs.createWriteStream('images/' + filename);
+    fstream = fs.createWriteStream('/images/' + filename);
     file.pipe(fstream);
     fstream.on('close', function () {
+
+      console.log(fs.readdirSync("images"));
+      console.log(fs.readdirSync("/images"));
       router.GetImageTags();
 
       res.json({response:'img-success'});
@@ -155,7 +158,9 @@ router.get('/pepper/:id',function(req,res){
   res.sendFile(filepath);
 })
 router.get('/img',function(req,res){
-  var filepath="images/capture.jpg";
+  console.log(fs.readdirSync("images"));
+  console.log(fs.readdirSync("/images"));
+  var filepath="/images/capture.jpg";
   res.sendFile(filepath);
 })
 router.get('/pepperp',function(req,res){
