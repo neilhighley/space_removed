@@ -49,10 +49,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18461539">
-              <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.86153847">
+              <caret line="157" column="27" selection-start-line="157" selection-start-column="27" selection-end-line="157" selection-end-column="27" />
               <folding>
-                <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
+                <marker date="1435488107000" expanded="true" signature="4212:4223" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -382,7 +382,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435487568825</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="test auto deploy">
+      <created>1435487735506</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1435487735506</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -432,7 +438,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/index.js</url>
-          <line>142</line>
+          <line>143</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
@@ -458,7 +464,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
+            <marker date="1435488107000" expanded="true" signature="4212:4223" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -526,10 +532,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18461539">
-          <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.86153847">
+          <caret line="157" column="27" selection-start-line="157" selection-start-column="27" selection-end-line="157" selection-end-column="27" />
           <folding>
-            <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
+            <marker date="1435488107000" expanded="true" signature="4212:4223" placeholder="..." />
           </folding>
         </state>
       </provider>
