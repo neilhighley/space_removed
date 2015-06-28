@@ -49,10 +49,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6769231">
-              <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.18461539">
+              <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
               <folding>
-                <marker date="1435487553000" expanded="true" signature="4211:4222" placeholder="..." />
+                <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -376,7 +376,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435487320755</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="test auto deploy">
+      <created>1435487568825</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1435487568825</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -452,7 +458,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1435487553000" expanded="true" signature="4211:4222" placeholder="..." />
+            <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -520,10 +526,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6769231">
-          <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.18461539">
+          <caret line="139" column="40" selection-start-line="139" selection-start-column="40" selection-end-line="139" selection-end-column="40" />
           <folding>
-            <marker date="1435487553000" expanded="true" signature="4211:4222" placeholder="..." />
+            <marker date="1435487729000" expanded="true" signature="4197:4208" placeholder="..." />
           </folding>
         </state>
       </provider>
