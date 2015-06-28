@@ -1,11 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var fs=require('fs');
-
 GLOBAL.type_num=0;
 GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
-
-
 
 router.resetPositions=function(){
   GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
@@ -56,7 +52,7 @@ router.resetPositions();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Space. Removed.' });
+  res.render('index', { title: 'Express' });
 });
 
 router.get('/poprange',function(req,res){
@@ -107,15 +103,7 @@ router.post('/sensor/:id',function(req,res){
   res.json({response:'sensor-success'});
 })
 router.post('/img',function(req,res){
-  var fstream;
-  req.pipe(req.busboy);
-  req.busboy.on('file', function (fieldname, file, filename) {
-    fstream = fs.createWriteStream(process.cwd() + '/images/' + filename);
-    file.pipe(fstream);
-    fstream.on('close', function () {
-      res.json({response:'img-success'});
-    });
-  });
+  res.json({response:'img-success'});
 })
 router.get('/range',function(req,res){
   res.json({response:'success'});
