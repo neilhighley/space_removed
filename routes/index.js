@@ -158,8 +158,7 @@ router.get('/pepper/:id',function(req,res){
   res.sendFile(filepath);
 })
 router.get('/img',function(req,res){
-  console.log(fs.readdirSync("images"));
-  console.log(fs.readdirSync("/images"));
+
   var filepath="/images/capture.jpg";
   res.sendFile(filepath);
 })
