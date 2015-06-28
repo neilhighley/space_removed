@@ -1,12 +1,70 @@
 var express = require('express');
 var router = express.Router();
 GLOBAL.type_num=0;
-
 GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
+
+router.resetPositions=function(){
+  GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
+}
+router.calcPosition=function(r1,r2,r3,c1,c2,c3){
+
+  router.resetPositions();
+  if(r1>70 && r1<100 && c3>1 && c3<30){
+    GLOBAL.positions[8]=1;
+    return;
+  }
+  if(r2>70 && r2<100 && c3>30 && c3<70){
+    GLOBAL.positions[7]=1;
+    return;
+  }
+
+  if(r3>70 && r3<100 && c3>70 && c3<100){
+    GLOBAL.positions[6]=1;
+    return;
+  }
+  if(r1>30 && r1<70 && c2>1 && c2<30){
+    GLOBAL.positions[5]=1;
+    return;
+  }
+  if(r2>30 && r2<70 && c2>30 && c2<70){
+    GLOBAL.positions[4]=1;
+    return;
+  }
+  if(r3>30 && r3<70 && c2>70 && c2<100){
+    GLOBAL.positions[3]=1;
+    return;
+  }
+  if(r1<30 && r1>1 && c1>1 && c1<30){
+    GLOBAL.positions[2]=1;
+    return;
+  }
+  if(r2<30 && r2>1 && c1>30 && c1<70){
+    GLOBAL.positions[1]=1;
+    return;
+  }
+  if(r3<30 && r3>1 && c1>70 && c1<100){
+    GLOBAL.positions[0]=1;
+    return;
+  }
+router.resetPositions();
+  return;
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+router.get('/poprange',function(req,res){
+  var range1=Number(req.query.r1);
+  var range2=Number(req.query.r2);
+  var range3=Number(req.query.r3);
+  var range4=Number(req.query["c1"]);
+  var range5=Number(req.query["c2"]);
+  var range6=Number(req.query["c3"]);
+
+
+  router.calcPosition(range1,range2,range3,range4,range5,range6);
 });
 
 router.get('/ranges', function(req, res) {
@@ -35,11 +93,8 @@ router.get('/unset/:id',function(req,res){
   res.json({response:'sensor-success'});
 });
 router.get('/reset',function(req,res){
-  for(var id=0;id<10;id++){
-    GLOBAL.positions[id]=0;
-  }
-
-  res.json({response:'sensor-success'});
+   router.calcPosition(0,0,0,0,0,0);
+  res.json({response:'reset-success'});
 });
 
 
