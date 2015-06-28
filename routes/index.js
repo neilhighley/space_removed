@@ -1,11 +1,38 @@
 var express = require('express');
 var router = express.Router();
 var fs=require('fs');
+var unirest=require("unirest");
 
 GLOBAL.type_num=0;
 GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
 
+router.GetImageTags=function(){
+  var apikey="acc_3124dae9d21af59";
+  var apisecret="6467c7ebba6f77d55d6692046794d732";
+  var b64="YWNjXzMxMjRkYWU5ZDIxYWY1OTo2NDY3YzdlYmJhNmY3N2Q1NWQ2NjkyMDQ2Nzk0ZDczMg==";
+  var apiendpoint="http://api.imagga.com";
 
+  var calling="http://api.imagga.com/v1/tagging?url=http://spaceremoved.herokuapp.com/img";
+
+  var req = unirest("GET", "http://api.imagga.com/v1/tagging");
+
+  req.query({
+    "url": "http://spaceremoved.herokuapp.com/img"
+  });
+
+  req.headers({
+    "authorization": "Basic "+b64,
+    "accept": "application/json"
+  });
+
+
+  req.end(function (res) {
+    if (res.error) throw new Error(res.error);
+
+    console.log(res.body);
+  });
+
+}
 
 router.resetPositions=function(){
   GLOBAL.positions=[0,0,0,0,0,0,0,0,0];
@@ -113,6 +140,8 @@ router.post('/img',function(req,res){
     fstream = fs.createWriteStream(process.cwd() + '/images/' + filename);
     file.pipe(fstream);
     fstream.on('close', function () {
+      router.GetImageTags();
+
       res.json({response:'img-success'});
     });
   });
@@ -124,15 +153,20 @@ router.get('/pepper/:id',function(req,res){
   var filepath=process.cwd()+"/images/pepper01.jpg";
   res.sendFile(filepath);
 })
+router.get('/img',function(req,res){
+  var filepath=process.cwd()+"/images/capture.jpg";
+  res.sendFile(filepath);
+})
 router.get('/pepperp',function(req,res){
   var html_return="<html><head>";
   html_return+="<meta http-equiv='refresh' content='20'>";
-  html_return="</head><body><style>body{background-color:#000;}</style><img src='/pepper/01' style='height:100%'/></body>";
+  html_return="</head><body><style>body{background-color:#000;}</style><img src='/img' style='height:100%'/></body>";
   res.send(html_return);
 })
 router.get('/image',function(req,res){
   var type_found="";
-  GLOBAL.type_num=Math.floor(Math.random()*10)
+
+  //GLOBAL.type_num=Math.floor(Math.random()*10)
   if(GLOBAL.type_num==1)type_found="cat";
   if(GLOBAL.type_num==2)type_found="dog";
   if(GLOBAL.type_num==3)type_found="king";
